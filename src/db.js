@@ -4,6 +4,8 @@ import { getAnalytics } from "firebase/analytics";
 import { getDatabase } from "firebase/database";
 import {getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth'
 import { AuthCredential } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";  // Importa o Storage do Firebase
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,5 +23,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
+const storage = getStorage(app);  // Inicializa o Storage
 
-export{app,database }
+export{app,database, storage }
